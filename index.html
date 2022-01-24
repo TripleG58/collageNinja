@@ -83,6 +83,7 @@ function drawerMouseHandler(e) {
   for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
     elem.classList.toggle('hide');
   }
+  e.target.parentNode.nextElementSibling.classList.toggle('hide');
 }
 
 (()=>{
