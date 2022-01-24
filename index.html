@@ -31,6 +31,7 @@
         }
         .btn {
             cursor: pointer;
+            user-select: none;
         }
         .btn.expand, .btn.collapse {
             float: right;
@@ -68,6 +69,28 @@
 
     <!-- <script src=”3ttps://unpkg.com/material-components-web/dist/material-components-web.min.js"></script> -->
     <script>
+
+
+function dqs(str) {
+  return document.querySelector(str);
+}
+function dqsa(str) {
+  return document.querySelectorAll(str);
+}
+
+function drawerMouseHandler(e) {
+  e.stopPropagation();
+  for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
+    elem.classList.toggle('hide');
+  }
+}
+
+(()=>{
+  for (let elem of dqsa('.btn.expand, .btn.collapse')) {
+    elem.onclick = drawerMouseHandler;
+  }
+})();
+
 
     </script>
 </body>
