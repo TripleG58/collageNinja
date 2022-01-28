@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,53 +9,65 @@
     <!-- <link rel=”stylesheet” href=”https://unpkg.com/material-components-web/dist/material-components-web.min.css">
     <link rel=”stylesheet” href=”https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <style>
-        html, body {
+        html,
+        body {
             width: 100%;
             height: 100%;
         }
+
         body {
             margin: 0;
             background-color: #111;
             color: limegreen;
-            font-family:'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
         }
+
         main {
             margin: auto;
             max-width: 720px;
             padding: 20px;
         }
-        h3, h3 + p {
+
+        h3,
+        h3+p {
             display: inline-block;
         }
+
         a {
             color: limegreen;
         }
+
         p.indent {
             text-indent: 30px;
             line-height: 1.2rem;
         }
+
         .btn {
             cursor: pointer;
             user-select: none;
         }
+
         .btn.expand {
             width: 115.219px;
             text-align: center;
             letter-spacing: 2px;
         }
-        .btn.expand, .btn.collapse {
+
+        .btn.expand,
+        .btn.collapse {
             float: right;
             border: #555 1px solid;
             border-radius: 3px;
             padding: 5px;
             margin-top: -6px;
         }
+
         .hide {
             display: none;
         }
-
     </style>
 </head>
+
 <body>
     <main>
         <h1>Collage Ninja</h1>
@@ -67,52 +80,65 @@
         <h2>Instructions <span class="btn expand hide">Expand</span><span class="btn collapse">Collapse</span></h2>
         <div>
             <p class="indent">
-                This is a demonstration of an algorithm I came up with for generating randomly sized boxes to fill an encompassing rectangle without overlapping. The original intent was to generate a randomized collage for my personal portfolio website. Since I found no other tools that accomplished exactly what I wanted effectively, I went to work and designed this tool, Collage Ninja, that other people can use and take advantage of as well!
+                This is a demonstration of an algorithm I came up with for generating randomly sized boxes to fill an
+                encompassing rectangle without overlapping. The original intent was to generate a randomized collage for
+                my personal portfolio website. Since I found no other tools that accomplished exactly what I wanted
+                effectively, I went to work and designed this tool, Collage Ninja, that other people can use and take
+                advantage of as well!
             </p>
             <p class="indent">
-                I am hoping to make the library available to all via GitHub to use in other web development situations where you might want a set of images OR DOM ELEMENTS with arbitrary/deviant widths & heights to occupy a single rectangular area. One use I can see for this would be those scroller websites like pinterest, tumblr, even facebook if they so choose. Any website where you see multiple columns of images in a card like structure. Lazy-loading these images can cause height issues and break some layouts. This library aims to solve that while also increasing creative freedom by allowing items with different widths to be placed on the same row. It is not perfect, and will not fit many use cases, but I believe it has a good amount of potential.
+                I am hoping to make the library available to all via GitHub to use in other web development situations
+                where you might want a set of images OR DOM ELEMENTS with arbitrary/deviant widths & heights to occupy a
+                single rectangular area. One use I can see for this would be those scroller websites like pinterest,
+                tumblr, even facebook if they so choose. Any website where you see multiple columns of images in a card
+                like structure. Lazy-loading these images can cause height issues and break some layouts. This library
+                aims to solve that while also increasing creative freedom by allowing items with different widths to be
+                placed on the same row. It is not perfect, and will not fit many use cases, but I believe it has a good
+                amount of potential.
             </p>
         </div>
         <h2>Choose Photos <span class="btn expand hide">Expand</span><span class="btn collapse">Collapse</span></h2>
         <p>
-            
+
         </p>
         <h2>Options <span class="btn expand hide">Expand</span><span class="btn collapse">Collapse</span></h2>
         <p>
-            
+
         </p>
         <h2>Ouptut</h2>
         <p>
-            
+
         </p>
     </main>
-    
+
 
     <!-- <script src=”3ttps://unpkg.com/material-components-web/dist/material-components-web.min.js"></script> -->
     <script>
 
-function dqs(str) {
-  return document.querySelector(str);
-}
-function dqsa(str) {
-  return document.querySelectorAll(str);
-}
+        function dqs(str) {
+            return document.querySelector(str);
+        }
+        function dqsa(str) {
+            return document.querySelectorAll(str);
+        }
 
-function drawerMouseHandler(e) {
-  e.stopPropagation();
-  for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
-    elem.classList.toggle('hide');
-  }
-  e.target.parentNode.nextElementSibling.classList.toggle('hide');
-}
 
-(()=>{
-  for (let elem of dqsa('.btn.expand, .btn.collapse')) {
-    elem.onclick = drawerMouseHandler;
-  }
-})();
+
+        (() => {
+            function drawerMouseHandler(e) {
+                e.stopPropagation();
+                for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
+                    elem.classList.toggle('hide');
+                }
+                e.target.parentNode.nextElementSibling.classList.toggle('hide');
+            }
+            for (let elem of dqsa('.btn.expand, .btn.collapse')) {
+                elem.onclick = drawerMouseHandler;
+            }
+        })();
 
 
     </script>
 </body>
+
 </html>
