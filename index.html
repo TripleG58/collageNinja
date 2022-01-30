@@ -48,11 +48,16 @@
 
         .btn {
             cursor: pointer;
-            user-select: none;
+            /* user-select: none; */
         }
 
         .hide {
             display: none;
+        }
+
+        .file-num-container {
+            font-size: 0.9rem;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -87,7 +92,15 @@
                 amount of potential.
             </p>
         </div>
-        <h2>Photos <span class="btn expand hide">Expand</span><span class="btn collapse">Collapse</span></h2>
+        <h2>
+            Photos 
+            <span class="btn">Choose</span>
+            <span class="file-num-container">
+                (   
+                <span class="file-num">0</span>
+                )
+            </span>
+        </h2>
         <p>
 
         </p>
