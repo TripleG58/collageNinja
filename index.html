@@ -118,6 +118,7 @@
 
     <script>
 
+        // Utility functions
         function dqs(str) {
             return document.querySelector(str);
         }
@@ -128,6 +129,7 @@
 
 
         (() => {
+            // UI event handlers
             function drawerMouseHandler(e) {
                 e.stopPropagation();
                 for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
@@ -142,6 +144,10 @@
                 dqs('#file-input').click();
             }
             dqs('.choose-photos').onclick = choosePhotosButtonHandler;
+            function updateFileNum(e) {
+                dqs('.file-num').innerHTML = e.target.files.length;
+            }
+            dqs('#file-input').onchange = updateFileNum;
         })();
 
 
