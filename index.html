@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collage Ninja</title>
-    <!-- <link rel=”stylesheet” href=”https://unpkg.com/material-components-web/dist/material-components-web.min.css">
-    <link rel=”stylesheet” href=”https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <style>
         html,
         body {
@@ -32,11 +30,13 @@
         h3+p {
             display: inline-block;
         }
+
         h2 > span.btn {
             font-size: 0.9rem;
             font-weight: normal;
             text-decoration: underline;
         }
+
         a {
             color: limegreen;
         }
@@ -48,7 +48,7 @@
 
         .btn {
             cursor: pointer;
-            /* user-select: none; */
+            user-select: none;
         }
 
         .hide {
@@ -103,10 +103,8 @@
             <span class="file-num-container">
                 (<span class="file-num">0</span>)
             </span>
+            <input type="file" id="file-input" multiple="" accept="image/*" style="display:none">
         </h2>
-        <p>
-
-        </p>
         <h2>Options <span class="btn expand hide">Expand</span><span class="btn collapse">Collapse</span></h2>
         <p>
 
@@ -118,7 +116,6 @@
     </main>
 
 
-    <!-- <script src=”3ttps://unpkg.com/material-components-web/dist/material-components-web.min.js"></script> -->
     <script>
 
         function dqs(str) {
@@ -141,6 +138,10 @@
             for (let elem of dqsa('.btn.expand, .btn.collapse')) {
                 elem.onclick = drawerMouseHandler;
             }
+            function choosePhotosButtonHandler(e) {
+                dqs('#file-input').click();
+            }
+            dqs('.choose-photos').onclick = choosePhotosButtonHandler;
         })();
 
 
