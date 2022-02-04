@@ -75,7 +75,7 @@
         <p>
             <a href="https://github.com/TripleG58" title="TripleG58">Github</a>
             <a href="https://www.patreon.com/iggg" title="<3">Patreon</a>
-            <!-- <a href="https://www.paypal.com/paypalme/geraldgehrke" title="Gerald Gehrke">PayPal</a> -->
+            <a href="https://www.paypal.com/paypalme/geraldgehrke" title="Gerald Gehrke">PayPal</a>
         </p>
         <h2>Explanation <span class="btn expand">Expand</span><span class="btn collapse hide">Collapse</span></h2>
         <div class="hide">
@@ -115,9 +115,7 @@
         </p>
     </main>
 
-
     <script>
-
         // Utility functions
         function dqs(str) {
             return document.querySelector(str);
@@ -125,8 +123,11 @@
         function dqsa(str) {
             return document.querySelectorAll(str);
         }
-
-        (() => { // UI event handlers
+    </script>
+    <script src="GridGallery.js"></script>
+    <script>
+        (() => {
+            // UI event handlers
             function drawerMouseHandler(e) {
                 e.stopPropagation();
                 for (let elem of e.target.parentNode.querySelectorAll('.btn')) {
@@ -146,8 +147,6 @@
             }
             dqs('#file-input').onchange = updateFileNum;
         })();
-
-
     </script>
 </body>
 
